@@ -1,0 +1,70 @@
+# Messages d'EterFriend, format MiniMessage. Balises de la palette : <primary> <accent> <info> <error> <success>
+# Une clé absente reprend le texte intégré au plugin : tu peux ne garder que les lignes que tu modifies.
+
+command:
+  usage: "<info>Usage : <accent>/<label> ajouter|accepter|refuser|retirer|rejoindre <joueur></accent>"
+
+friend:
+  joined: "<success>+ <accent><player></accent> <info>est en ligne."
+  left: "<error>- <accent><player></accent> <info>s'est déconnecté."
+  pending: "<info>Tu as <accent><count></accent> demande(s) d'ami en attente : <click:run_command:'/ami demandes'><accent><u>voir</u></accent></click>"
+  self: "<error>Tu ne peux pas être ton propre ami."
+  already: "<error>Tu es déjà ami avec <accent><player></accent>."
+  limit: "<error>Tu as atteint ta limite de <accent><limit></accent> amis."
+  now-friends: "<success>Tu es maintenant ami avec <accent><player></accent> !"
+  accepted-by: "<success><accent><player></accent> a accepté ta demande d'ami !"
+  refuses-requests: "<error><accent><player></accent> n'accepte pas les demandes d'ami."
+  already-sent: "<error>Tu as déjà envoyé une demande à <accent><player></accent>."
+  request-received: "<info><accent><player></accent> veut être ton ami : <click:run_command:'/ami accepter <player>'><success><u>accepter</u></success></click> <dark_gray>· <click:run_command:'/ami refuser <player>'><error><u>refuser</u></error></click>"
+  request-sent: "<success>Demande d'ami envoyée à <accent><player></accent>."
+  no-request: "<error>Pas de demande d'ami de <accent><player></accent>."
+  denied: "<info>Demande de <accent><player></accent> refusée."
+  removed: "<info><accent><player></accent> n'est plus ton ami."
+  not-friends: "<error>Tu n'es pas ami avec <accent><player></accent>."
+  offline: "<error><accent><player></accent> n'est pas en ligne."
+  requests-on: "<success>Tu acceptes à nouveau les demandes d'ami."
+  requests-off: "<info>Tu n'acceptes plus les demandes d'ami."
+  notify-on: "<success>Tu seras prévenu de l'arrivée de tes amis."
+  notify-off: "<info>Tu ne seras plus prévenu de l'arrivée de tes amis."
+  none-online: "<info>Aucun ami en ligne."
+  online-title: "<primary>Amis en ligne <dark_gray>(<accent><count></accent>)"
+  online-line: "<dark_gray>• <accent><player></accent> <dark_gray>· <info><server>"
+
+menu:
+  title: "Amis <dark_gray>(<online> en ligne · <count>/<limit>)"
+  empty: "<info>Pas encore d'ami"
+  empty-lore: "<dark_gray>Ajoute un joueur avec l'émeraude."
+  previous: "<accent>« Page précédente"
+  next: "<accent>Page suivante »"
+  back-friends: "<accent>« Retour aux amis"
+  friend:
+    name: "<info><player>"
+    name-online: "<success>● <accent><player>"
+    online: "<success>En ligne <dark_gray>· <info><server>"
+    offline: "<dark_gray>Hors ligne · vu le <date>"
+    since: "<dark_gray>Ami depuis le <date>"
+    join: "<accent>Clic <info>· le rejoindre"
+    remove: "<accent>Maj + clic droit <info>· retirer"
+  add:
+    name: "<success>Ajouter un ami"
+    lore: "<info>Envoie une demande à un joueur."
+    title: "Ajouter un ami"
+    body: "Le pseudo du joueur à ajouter :"
+    label: "Pseudo"
+    confirm: "Envoyer"
+  requests:
+    name: "<accent>Demandes reçues"
+    lore: "<info><count> en attente"
+    title: "Demandes d'ami <dark_gray>(<count>)"
+    sent: "<dark_gray>Envoyée le <date>"
+    accept: "<success>Clic gauche <info>· accepter"
+    deny: "<error>Clic droit <info>· refuser"
+    empty: "<info>Aucune demande en attente"
+  toggle-requests:
+    name: "<accent>Demandes d'ami"
+    "on": "<success>Acceptées <dark_gray>· clic pour couper"
+    "off": "<error>Refusées <dark_gray>· clic pour rouvrir"
+  toggle-notify:
+    name: "<accent>Annonces d'arrivée"
+    "on": "<success>Activées <dark_gray>· clic pour couper"
+    "off": "<error>Coupées <dark_gray>· clic pour rouvrir"

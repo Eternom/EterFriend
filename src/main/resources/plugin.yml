@@ -1,0 +1,21 @@
+name: EterFriend
+version: '${version}'
+
+main: fr.eternom.eterFriend.Main
+api-version: '26.2'
+load: POSTWORLD
+authors: [ NadTum ]
+description: Les amis du réseau (demandes, liste avec le serveur de chacun, rejoindre un ami, annonces d'arrivée).
+depend: [EterLib]
+
+commands:
+  ami:
+    description: Les amis (menu, demandes, rejoindre un ami).
+    usage: /ami [ajouter|accepter|refuser|retirer|rejoindre <joueur>] [liste|demandes|notifications]
+    aliases: [amis, friend, friends, f]
+    permission: eterfriend.use
+
+permissions:
+  eterfriend.use:
+    description: Utiliser les amis.
+    default: true

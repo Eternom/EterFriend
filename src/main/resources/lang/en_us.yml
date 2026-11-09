@@ -1,0 +1,70 @@
+# EterFriend messages, MiniMessage format. Palette tags: <primary> <accent> <info> <error> <success>
+# A missing key falls back to the text bundled with the plugin: keep only the lines you change.
+
+command:
+  usage: "<info>Usage: <accent>/<label> add|accept|deny|remove|join <player></accent>"
+
+friend:
+  joined: "<success>+ <accent><player></accent> <info>is online."
+  left: "<error>- <accent><player></accent> <info>went offline."
+  pending: "<info>You have <accent><count></accent> pending friend request(s): <click:run_command:'/ami demandes'><accent><u>view</u></accent></click>"
+  self: "<error>You can't be your own friend."
+  already: "<error>You are already friends with <accent><player></accent>."
+  limit: "<error>You reached your limit of <accent><limit></accent> friends."
+  now-friends: "<success>You are now friends with <accent><player></accent>!"
+  accepted-by: "<success><accent><player></accent> accepted your friend request!"
+  refuses-requests: "<error><accent><player></accent> doesn't accept friend requests."
+  already-sent: "<error>You already sent a request to <accent><player></accent>."
+  request-received: "<info><accent><player></accent> wants to be your friend: <click:run_command:'/ami accept <player>'><success><u>accept</u></success></click> <dark_gray>· <click:run_command:'/ami deny <player>'><error><u>deny</u></error></click>"
+  request-sent: "<success>Friend request sent to <accent><player></accent>."
+  no-request: "<error>No friend request from <accent><player></accent>."
+  denied: "<info>Request from <accent><player></accent> denied."
+  removed: "<info><accent><player></accent> is no longer your friend."
+  not-friends: "<error>You are not friends with <accent><player></accent>."
+  offline: "<error><accent><player></accent> is not online."
+  requests-on: "<success>You accept friend requests again."
+  requests-off: "<info>You no longer accept friend requests."
+  notify-on: "<success>You'll be told when your friends join."
+  notify-off: "<info>You won't be told when your friends join anymore."
+  none-online: "<info>No friend online."
+  online-title: "<primary>Online friends <dark_gray>(<accent><count></accent>)"
+  online-line: "<dark_gray>• <accent><player></accent> <dark_gray>· <info><server>"
+
+menu:
+  title: "Friends <dark_gray>(<online> online · <count>/<limit>)"
+  empty: "<info>No friend yet"
+  empty-lore: "<dark_gray>Add a player with the emerald."
+  previous: "<accent>« Previous page"
+  next: "<accent>Next page »"
+  back-friends: "<accent>« Back to friends"
+  friend:
+    name: "<info><player>"
+    name-online: "<success>● <accent><player>"
+    online: "<success>Online <dark_gray>· <info><server>"
+    offline: "<dark_gray>Offline · seen <date>"
+    since: "<dark_gray>Friends since <date>"
+    join: "<accent>Click <info>· join them"
+    remove: "<accent>Shift + right click <info>· remove"
+  add:
+    name: "<success>Add a friend"
+    lore: "<info>Send a request to a player."
+    title: "Add a friend"
+    body: "Name of the player to add:"
+    label: "Name"
+    confirm: "Send"
+  requests:
+    name: "<accent>Received requests"
+    lore: "<info><count> pending"
+    title: "Friend requests <dark_gray>(<count>)"
+    sent: "<dark_gray>Sent <date>"
+    accept: "<success>Left click <info>· accept"
+    deny: "<error>Right click <info>· deny"
+    empty: "<info>No pending request"
+  toggle-requests:
+    name: "<accent>Friend requests"
+    "on": "<success>Accepted <dark_gray>· click to turn off"
+    "off": "<error>Refused <dark_gray>· click to turn on"
+  toggle-notify:
+    name: "<accent>Join announcements"
+    "on": "<success>On <dark_gray>· click to turn off"
+    "off": "<error>Off <dark_gray>· click to turn on"

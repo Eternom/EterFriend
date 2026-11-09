@@ -1,0 +1,9 @@
+# EterFriend : les amis du réseau. Mêmes réglages sur tous les serveurs (base et Redis communs, via EterLib).
+
+# Nombre d'amis permis par défaut. Plus avec la permission eterfriend.limit.<n> (le plus grand l'emporte),
+# par exemple eterfriend.limit.100 pour un grade.
+default-limit: 50
+
+menus:
+  # Commande du bouton Retour quand le menu est ouvert sans menu précédent (vide = fermer), ex. "menu"
+  back-command: ""
