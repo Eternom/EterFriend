@@ -260,6 +260,16 @@ public class FriendService implements FriendApi {
         }, () -> messages.send(player, "error.generic"));
     }
 
+    /** Accepter ou refuser la dernière demande reçue (boutons du chat, /ami accepter sans pseudo). */
+    public void answerLatest(Player player, boolean accept) {
+        UUID uuid = player.getUniqueId();
+        Tasks.async(plugin, player, () -> repository.incoming(uuid).keySet().stream().reduce((first, second) -> second)
+                .map(sender -> new Object[]{sender, EterLib.get().getPlayers().get(sender).map(NetworkPlayer::name).orElse("?")}),
+                latest -> latest.ifPresentOrElse(found -> answer(player, (UUID) found[0], (String) found[1], accept, () -> { }),
+                        () -> messages.send(player, "friend.no-pending")),
+                () -> messages.send(player, "error.generic"));
+    }
+
     /** Retirer un ami (des deux côtés). Thread principal. */
     public void remove(Player player, UUID friend, String friendName, Runnable after) {
         UUID uuid = player.getUniqueId();

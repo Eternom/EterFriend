@@ -48,7 +48,12 @@ public class FriendCommand implements TabExecutor {
             case "demandes-on-off", "toggle" -> service.toggle(player, true, () -> { });
             case "ajouter", "add", "accepter", "accept", "refuser", "deny", "retirer", "remove", "rejoindre", "join" -> {
                 if (target == null) {
-                    messages.send(player, "command.usage", "label", label);
+                    // Sans pseudo : accepter / refuser la dernière demande reçue (boutons du chat)
+                    switch (sub) {
+                        case "accepter", "accept" -> service.answerLatest(player, true);
+                        case "refuser", "deny" -> service.answerLatest(player, false);
+                        default -> messages.send(player, "command.usage", "label", label);
+                    }
                     return true;
                 }
                 switch (sub) {
