@@ -24,7 +24,7 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:26.2.build.129-stable")
 
     // Socle commun : base, Redis et bus réseau, langues, menus, actions (plugin EterLib installé sur le serveur)
-    compileOnly("com.github.Eternom:EterLib:1.23.0")
+    compileOnly("com.github.Eternom:EterLib:1.24.0")
 
     // Tests de la logique pure
     testImplementation(platform("org.junit:junit-bom:5.11.4"))

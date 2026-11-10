@@ -68,6 +68,8 @@ public class FriendMenus {
                         known.map(found -> found.lastSeen()).orElse(0L)));
             });
             friends.sort((a, b) -> a.online() != b.online() ? (a.online() ? -1 : 1) : a.name().compareToIgnoreCase(b.name()));
+            // Les skins des têtes, dès la première ouverture (EterLib 1.24.0)
+            fr.eternom.eterLib.module.player.Skins.prefetch(friends.stream().map(Friend::uuid).toList());
             return new Object[]{friends, service.repository().incoming(uuid).size(), service.repository().settings(uuid)};
         }, data -> {
             @SuppressWarnings("unchecked") List<Friend> friends = (List<Friend>) data[0];
@@ -81,6 +83,7 @@ public class FriendMenus {
             List<Friend> requests = new ArrayList<>();
             service.repository().incoming(uuid).forEach((sender, at) -> requests.add(new Friend(sender,
                     EterLib.get().getPlayers().get(sender).map(found -> found.name()).orElse("?"), null, at, 0)));
+            fr.eternom.eterLib.module.player.Skins.prefetch(requests.stream().map(Friend::uuid).toList());
             return requests;
         }, requests -> player.openInventory(new RequestsMenu(player, requests).getInventory()),
                 () -> messages.send(player, "error.generic"));

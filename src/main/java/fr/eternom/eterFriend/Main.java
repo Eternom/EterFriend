@@ -22,7 +22,7 @@ import java.util.Objects;
  */
 public final class Main extends JavaPlugin {
 
-    private static final String REQUIRED_ETERLIB = "1.23.0";
+    private static final String REQUIRED_ETERLIB = "1.24.0";
     private static final String TABLE_PREFIX = "eterfriend_";
 
     @Override

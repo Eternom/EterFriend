@@ -1,7 +1,7 @@
 # EterFriend
 
 Les amis du réseau Akia : demandes, liste avec le serveur de chacun, rejoindre un ami, annonces d'arrivée et de départ.
-Paper 26.2, nécessite **EterLib 1.23.0** (base, Redis, bus réseau, téléportations).
+Paper 26.2, nécessite **EterLib 1.24.0** (base, Redis, bus réseau, téléportations).
 
 ## Joueurs
 
