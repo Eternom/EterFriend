@@ -46,9 +46,9 @@ public final class Main extends JavaPlugin {
         service.setMenus(menus);
 
         FriendCommand command = new FriendCommand(service, menus);
-        PluginCommand ami = Objects.requireNonNull(getCommand("ami"), "Commande absente du plugin.yml : ami");
-        ami.setExecutor(command);
-        ami.setTabCompleter(command);
+        PluginCommand friend = Objects.requireNonNull(getCommand("friend"), "Commande absente du plugin.yml : friend");
+        friend.setExecutor(command);
+        friend.setTabCompleter(command);
 
         lib.getActions().register(this, "eterfriend:menu", "Le menu des amis", List.of(), (player, args) -> menus.openFriends(player, 0));
         lib.getActions().register(this, "eterfriend:requests", "Les demandes d'amis reçues", List.of(), (player, args) -> menus.openRequests(player));

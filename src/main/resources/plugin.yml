@@ -9,10 +9,10 @@ description: Les amis du réseau (demandes, liste avec le serveur de chacun, rej
 depend: [EterLib]
 
 commands:
-  ami:
+  friend:
     description: Les amis (menu, demandes, rejoindre un ami).
-    usage: /ami [ajouter|accepter|refuser|retirer|rejoindre <joueur>] [liste|demandes|notifications]
-    aliases: [amis, friend, friends, f]
+    usage: /friend [add|accept|deny|remove|join <joueur>] [list|requests|notify|toggle]
+    aliases: [friends, f]
     permission: eterfriend.use
 
 permissions:

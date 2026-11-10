@@ -2,12 +2,12 @@
 # Une clé absente reprend le texte intégré au plugin : tu peux ne garder que les lignes que tu modifies.
 
 command:
-  usage: "<info>Usage : <accent>/<label> ajouter|accepter|refuser|retirer|rejoindre <joueur></accent>"
+  usage: "<info>Usage : <accent>/<label> add|accept|deny|remove|join <joueur></accent>"
 
 friend:
   joined: "<success>+ <accent><player></accent> <info>est en ligne."
   left: "<error>- <accent><player></accent> <info>s'est déconnecté."
-  pending: "<info>Tu as <accent><count></accent> demande(s) d'ami en attente : <click:run_command:'/ami demandes'><accent><u>voir</u></accent></click>"
+  pending: "<info>Tu as <accent><count></accent> demande(s) d'ami en attente : <click:run_command:'/friend requests'><accent><u>voir</u></accent></click>"
   self: "<error>Tu ne peux pas être ton propre ami."
   already: "<error>Tu es déjà ami avec <accent><player></accent>."
   limit: "<error>Tu as atteint ta limite de <accent><limit></accent> amis."
@@ -15,7 +15,7 @@ friend:
   accepted-by: "<success><accent><player></accent> a accepté ta demande d'ami !"
   refuses-requests: "<error><accent><player></accent> n'accepte pas les demandes d'ami."
   already-sent: "<error>Tu as déjà envoyé une demande à <accent><player></accent>."
-  request-received: "<info><accent><player></accent> veut être ton ami : <click:run_command:'/ami accepter'><success><u>accepter</u></success></click> <dark_gray>· <click:run_command:'/ami refuser'><error><u>refuser</u></error></click>"
+  request-received: "<info><accent><player></accent> veut être ton ami : <click:run_command:'/friend accept'><success><u>accepter</u></success></click> <dark_gray>· <click:run_command:'/friend deny'><error><u>refuser</u></error></click>"
   request-sent: "<success>Demande d'ami envoyée à <accent><player></accent>."
   no-request: "<error>Pas de demande d'ami de <accent><player></accent>."
   no-pending: "<error>Aucune demande d'ami en attente."

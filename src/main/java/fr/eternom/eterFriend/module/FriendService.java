@@ -260,7 +260,7 @@ public class FriendService implements FriendApi {
         }, () -> messages.send(player, "error.generic"));
     }
 
-    /** Accepter ou refuser la dernière demande reçue (boutons du chat, /ami accepter sans pseudo). */
+    /** Accepter ou refuser la dernière demande reçue (boutons du chat, /friend accept sans pseudo). */
     public void answerLatest(Player player, boolean accept) {
         UUID uuid = player.getUniqueId();
         Tasks.async(plugin, player, () -> repository.incoming(uuid).keySet().stream().reduce((first, second) -> second)

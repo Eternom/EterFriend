@@ -11,13 +11,14 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * /ami [ajouter | accepter | refuser | retirer <joueur>] [liste | demandes | notifications | rejoindre <joueur>] :
- * sans argument, le menu des amis.
+ * /friend [add | accept | deny | remove | join <joueur>] [list | requests | notify | toggle] : sans argument, le menu.
+ * /friend <joueur> : raccourci de /friend add <joueur>. accept / deny sans pseudo : la dernière demande reçue (boutons
+ * du chat). Les commandes et leurs arguments sont en anglais ; les textes sont traduits (lang/).
  */
 public class FriendCommand implements TabExecutor {
 
-    private static final List<String> SUBS = List.of("ajouter", "accepter", "refuser", "retirer", "rejoindre", "liste",
-            "demandes", "notifications", "demandes-on-off");
+    private static final List<String> SUBS = List.of("add", "accept", "deny", "remove", "join", "list", "requests", "notify", "toggle");
+    private static final List<String> WITHOUT_PLAYER = List.of("list", "requests", "notify", "toggle");
 
     private final FriendService service;
     private final FriendMenus menus;
@@ -42,29 +43,28 @@ public class FriendCommand implements TabExecutor {
         String sub = args[0].toLowerCase(Locale.ROOT);
         String target = args.length > 1 ? args[1] : null;
         switch (sub) {
-            case "liste", "list" -> menus.listInChat(player);
-            case "demandes", "requests" -> menus.openRequests(player);
-            case "notifications", "notify" -> service.toggle(player, false, () -> { });
-            case "demandes-on-off", "toggle" -> service.toggle(player, true, () -> { });
-            case "ajouter", "add", "accepter", "accept", "refuser", "deny", "retirer", "remove", "rejoindre", "join" -> {
+            case "list" -> menus.listInChat(player);
+            case "requests" -> menus.openRequests(player);
+            case "notify" -> service.toggle(player, false, () -> { });
+            case "toggle" -> service.toggle(player, true, () -> { });
+            case "add", "accept", "deny", "remove", "join" -> {
                 if (target == null) {
                     // Sans pseudo : accepter / refuser la dernière demande reçue (boutons du chat)
                     switch (sub) {
-                        case "accepter", "accept" -> service.answerLatest(player, true);
-                        case "refuser", "deny" -> service.answerLatest(player, false);
+                        case "accept" -> service.answerLatest(player, true);
+                        case "deny" -> service.answerLatest(player, false);
                         default -> messages.send(player, "command.usage", "label", label);
                     }
                     return true;
                 }
                 switch (sub) {
-                    case "ajouter", "add" -> service.request(player, target);
-                    case "accepter", "accept" -> service.answer(player, target, true);
-                    case "refuser", "deny" -> service.answer(player, target, false);
-                    case "retirer", "remove" -> service.remove(player, target);
+                    case "add" -> service.request(player, target);
+                    case "accept" -> service.answer(player, target, true);
+                    case "deny" -> service.answer(player, target, false);
+                    case "remove" -> service.remove(player, target);
                     default -> joinByName(player, target);
                 }
             }
-            // /ami <joueur> : raccourci de /ami ajouter <joueur>
             default -> service.request(player, args[0]);
         }
         return true;
@@ -82,7 +82,7 @@ public class FriendCommand implements TabExecutor {
             String start = args[0].toLowerCase(Locale.ROOT);
             return SUBS.stream().filter(sub -> sub.startsWith(start)).toList();
         }
-        if (args.length == 2 && !List.of("liste", "demandes", "notifications", "demandes-on-off").contains(args[0].toLowerCase(Locale.ROOT))) {
+        if (args.length == 2 && !WITHOUT_PLAYER.contains(args[0].toLowerCase(Locale.ROOT))) {
             return EterLib.get().getOnlineNames().complete(args[1]);
         }
         return List.of();

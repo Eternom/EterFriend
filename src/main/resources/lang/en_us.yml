@@ -7,7 +7,7 @@ command:
 friend:
   joined: "<success>+ <accent><player></accent> <info>is online."
   left: "<error>- <accent><player></accent> <info>went offline."
-  pending: "<info>You have <accent><count></accent> pending friend request(s): <click:run_command:'/ami demandes'><accent><u>view</u></accent></click>"
+  pending: "<info>You have <accent><count></accent> pending friend request(s): <click:run_command:'/friend requests'><accent><u>view</u></accent></click>"
   self: "<error>You can't be your own friend."
   already: "<error>You are already friends with <accent><player></accent>."
   limit: "<error>You reached your limit of <accent><limit></accent> friends."
@@ -15,7 +15,7 @@ friend:
   accepted-by: "<success><accent><player></accent> accepted your friend request!"
   refuses-requests: "<error><accent><player></accent> doesn't accept friend requests."
   already-sent: "<error>You already sent a request to <accent><player></accent>."
-  request-received: "<info><accent><player></accent> wants to be your friend: <click:run_command:'/ami accepter'><success><u>accept</u></success></click> <dark_gray>· <click:run_command:'/ami refuser'><error><u>deny</u></error></click>"
+  request-received: "<info><accent><player></accent> wants to be your friend: <click:run_command:'/friend accept'><success><u>accept</u></success></click> <dark_gray>· <click:run_command:'/friend deny'><error><u>deny</u></error></click>"
   request-sent: "<success>Friend request sent to <accent><player></accent>."
   no-request: "<error>No friend request from <accent><player></accent>."
   no-pending: "<error>No pending friend request."
