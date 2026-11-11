@@ -45,6 +45,7 @@ menu:
     offline: "<dark_gray>Hors ligne · vu le <date>"
     since: "<dark_gray>Ami depuis le <date>"
     join: "<accent>Clic <info>· le rejoindre"
+    actions: "<accent>Clic droit <info>· message, téléportation, payer..."
     remove: "<accent>Maj + clic droit <info>· retirer"
   add:
     name: "<success>Ajouter un ami"

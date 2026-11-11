@@ -45,6 +45,7 @@ menu:
     offline: "<dark_gray>Offline · seen <date>"
     since: "<dark_gray>Friends since <date>"
     join: "<accent>Click <info>· join them"
+    actions: "<accent>Right click <info>· message, teleport, pay..."
     remove: "<accent>Shift + right click <info>· remove"
   add:
     name: "<success>Add a friend"

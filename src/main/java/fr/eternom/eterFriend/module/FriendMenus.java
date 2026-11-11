@@ -151,6 +151,9 @@ public class FriendMenus {
                 if (friend.online()) {
                     lore.add(messages.get(viewer, "menu.friend.join"));
                 }
+                if (Bukkit.getCommandMap().getCommand("menu") != null) {
+                    lore.add(messages.get(viewer, "menu.friend.actions"));
+                }
                 lore.add(messages.get(viewer, "menu.friend.remove"));
                 inventory.setItem(SLOTS[i], Items.head(Bukkit.createProfile(friend.uuid(), friend.name()),
                         messages.get(viewer, friend.online() ? "menu.friend.name-online" : "menu.friend.name", "player", friend.name()), lore));
@@ -212,6 +215,10 @@ public class FriendMenus {
                 if (click == ClickType.SHIFT_RIGHT) {
                     Sounds.click(player);
                     service.remove(player, friend.uuid(), friend.name(), () -> openFriends(player, page));
+                } else if (click == ClickType.RIGHT && Bukkit.getCommandMap().getCommand("menu") != null) {
+                    // Le menu « joueur » d'EterEssential : message, tpa, payer... (le même partout)
+                    Sounds.click(player);
+                    player.performCommand("menu player " + friend.name());
                 } else if (friend.online()) {
                     Sounds.click(player);
                     service.join(player, friend.uuid(), friend.name());
