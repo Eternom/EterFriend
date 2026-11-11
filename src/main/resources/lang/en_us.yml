@@ -53,7 +53,7 @@ menu:
     lore: "<info>Send a request to a player."
     title: "Add a friend"
     body: "Name of the player to add:"
-    label: "Name"
+    label: "Exact player name"
     confirm: "Send"
   requests:
     name: "<accent>Received requests"

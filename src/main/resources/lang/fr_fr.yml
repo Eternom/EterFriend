@@ -53,7 +53,7 @@ menu:
     lore: "<info>Envoie une demande à un joueur."
     title: "Ajouter un ami"
     body: "Le pseudo du joueur à ajouter :"
-    label: "Pseudo"
+    label: "Pseudo exact"
     confirm: "Envoyer"
   requests:
     name: "<accent>Demandes reçues"
