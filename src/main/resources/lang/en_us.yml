@@ -32,6 +32,7 @@ friend:
   online-line: "<dark_gray>• <accent><player></accent> <dark_gray>· <info><server>"
 
 menu:
+  page-of: "<dark_gray>Page <page>/<pages>"
   title: "Friends <dark_gray>(<online> online · <count>/<limit>)"
   empty: "<info>No friend yet"
   empty-lore: "<dark_gray>Add a player with the emerald."

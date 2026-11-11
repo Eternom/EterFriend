@@ -172,10 +172,10 @@ public class FriendMenus {
                     messages.get(viewer, "menu.toggle-notify.name"),
                     List.of(messages.get(viewer, settings.announce() ? "menu.toggle-notify.on" : "menu.toggle-notify.off"))));
             if (this.page > 0) {
-                inventory.setItem(PREVIOUS, Items.item(Material.ARROW, messages.get(viewer, "menu.previous"), List.of()));
+                inventory.setItem(PREVIOUS, Items.item(Material.ARROW, messages.get(viewer, "menu.previous"), List.of(messages.get(viewer, "menu.page-of", "page", String.valueOf(page + 1), "pages", String.valueOf(pages)))));
             }
             if (this.page < pages - 1) {
-                inventory.setItem(NEXT, Items.item(Material.ARROW, messages.get(viewer, "menu.next"), List.of()));
+                inventory.setItem(NEXT, Items.item(Material.ARROW, messages.get(viewer, "menu.next"), List.of(messages.get(viewer, "menu.page-of", "page", String.valueOf(page + 1), "pages", String.valueOf(pages)))));
             }
         }
 
