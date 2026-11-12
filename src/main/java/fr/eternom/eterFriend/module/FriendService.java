@@ -205,7 +205,7 @@ public class FriendService implements FriendApi {
                 Bukkit.getScheduler().runTask(plugin, () -> bus.notify(other, "friend.accepted-by", true, "player", name));
                 return new String[]{"friend.now-friends", otherName};
             }
-            if (!repository.settings(other).requests()) {
+            if (!repository.settings(other).requests() || ChatIgnores.ignores(other, uuid)) {
                 return new String[]{"friend.refuses-requests", otherName};
             }
             if (!repository.request(uuid, other)) {

@@ -7,6 +7,7 @@ load: POSTWORLD
 authors: [ NadTum ]
 description: Les amis du réseau (demandes, liste avec le serveur de chacun, rejoindre un ami, annonces d'arrivée).
 depend: [EterLib]
+softdepend: [EterChat]
 
 commands:
   friend:

@@ -25,6 +25,8 @@ dependencies {
 
     // Socle commun : base, Redis et bus réseau, langues, menus, actions (plugin EterLib installé sur le serveur)
     compileOnly("com.github.Eternom:EterLib:1.24.0")
+    // /ignore d'EterChat : un joueur ignoré ne peut pas envoyer de demande d'ami (facultatif)
+    compileOnly("com.github.Eternom:EterChat:1.5.0")
 
     // Tests de la logique pure
     testImplementation(platform("org.junit:junit-bom:5.11.4"))
